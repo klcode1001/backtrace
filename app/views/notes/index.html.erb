@@ -1,0 +1,6 @@
+<h1>Note#index</h1>
+<ul>
+  <% @notes.each do |note| %>
+    <li><%= link_to note.body, note_path(note) %></li>
+  <% end %>
+</ul>

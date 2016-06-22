@@ -1,0 +1,10 @@
+<h1>Note#show</h1>
+<p>Comments</p>
+<ul>
+<% @note.comments.each do |comment| %>
+  <li>
+    <%= comment.body %>
+    <%= link_to "BAに決定", best_path(:comment => comment.id, :note_id => @note.id), method: :post %>
+  </li>
+<% end %>
+</ul>
