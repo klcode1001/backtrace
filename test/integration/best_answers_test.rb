@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class BestAnswerTest < ActionDispatch::IntegrationTest
+class BestAnswersTest < ActionDispatch::IntegrationTest
   setup do
     @note = note = Note.create! body: 'Hello?'
     @comment_1 = note.comments.create! body: 'Hello!'

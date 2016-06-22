@@ -4,7 +4,12 @@
 <% @note.comments.each do |comment| %>
   <li>
     <%= comment.body %>
-    <%= link_to "BAに決定", best_path(:comment => comment.id, :note_id => @note.id), method: :post %>
+    <% if @note.best_answer.try(:comment) == comment %>
+      <b>(BA)</b>
+    <% else %>
+      <%= link_to "BAに決定", best_path(:comment => comment.id, :note_id => @note.id), method: :post %>
+    <% end %>
   </li>
 <% end %>
 </ul>
+<%= link_to 'Back', root_path %>
